@@ -6,7 +6,7 @@
 - [EN-US](#en) 🇺🇸
 
 
-## PT-BR 🇧🇷
+## PT-BR
 
 - Estrutura:
     - Pastas ->
@@ -16,7 +16,7 @@
             
         - Courses_projects: Contém pequenos projetos criados durante estudos de cursos. Cada pasta se refere a o local onde fiz o curso. cada uma possui um arquivo com os links para o site. (ex: A pasta DataCamp se refere a [DataCamp](https://www.datacamp.com))
 
-## EN 🇺🇸
+## EN
 
 
 - Structure:
