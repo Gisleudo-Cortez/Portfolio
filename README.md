@@ -1,4 +1,4 @@
-# Contents / Conteúdo
+# Content / Conteúdo
 
 - [PT-BR](#pt-br) 🇧🇷
 
