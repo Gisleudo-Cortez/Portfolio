@@ -7,4 +7,6 @@
 *.txt
 *.env
 *.gz
+*.pkl
 .geojson
+__pycache__/
