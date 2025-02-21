@@ -78,15 +78,12 @@ def main():
     letra_dict, total_letras = calcular_distribuicao_letras(palavras)
     prob_letras = calcular_probabilidades(letra_dict, total_letras)
     ent_dict = calcular_entropias(palavras, prob_letras)
-    
-    melhor_inicial = sugerir_melhor_palavra(ent_dict)
-    print(f"\nSugestão de palavra inicial: {melhor_inicial.upper()} (ou escolha outra)")
 
     tentativas = 20
     feedbacks_acumulados = []
     
     for tentativa in range(1, tentativas + 1):
-        print(f"\n--- Tentativa {tentativa} ---")
+        print(f"--- Tentativa {tentativa} ---")
         
         if len(palavras) == 0:
             print("Não há mais palavras candidatas! (Verifique a lógica ou dicas incorretas.)")
@@ -99,7 +96,7 @@ def main():
         else:
             chute_sugerido = max(ent_atual, key=ent_atual.get)
         
-        print(f"Sugestão do sistema: {chute_sugerido.upper()}")
+        print(f"Sugestão do sistema: {chute_sugerido.upper()}\nentropia: {ent_dict[chute_sugerido]:.4f}")
         
         chute_usuario = input("Digite a palavra que você usou (ou ENTER para usar a sugestão): ").strip().lower()
         if chute_usuario == "":
