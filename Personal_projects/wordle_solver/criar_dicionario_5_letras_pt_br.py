@@ -1,21 +1,33 @@
 import requests
 import unicodedata
 
-# DICT_URL = "https://www.ime.usp.br/~pf/dicios/br-utf8.txt"
+DICT_URL_1 = "https://www.ime.usp.br/~pf/dicios/br-utf8.txt"
 DICT_URL = "https://raw.githubusercontent.com/fserb/pt-br/refs/heads/master/palavras"
 
+INVALIDAS = {'aioes'}
+
+
 def remove_acentos(palavra):
-    return ''.join(
-        c for c in unicodedata.normalize('NFD', palavra) if unicodedata.category(c) != 'Mn'
-    )
+    return ''.join(c for c in unicodedata.normalize('NFD', palavra) if unicodedata.category(c) != 'Mn')
 
-pt_br_full = requests.get(DICT_URL).text.strip().splitlines()
-pt_br_letras_5 = {remove_acentos(p.lower()) for p in pt_br_full if len(p) == 5}
 
-with open("portugues_5_letras_gh.txt", "w") as file:
-    for p in pt_br_letras_5:
-        palavras_invalidas_no_termoo = ['aioes']
-        if p in palavras_invalidas_no_termoo:
-            continue
-        else:
-            file.write(f"{p}\n")
+def obter_palavras(url):
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.text.strip().splitlines()
+
+
+def filtrar_palavras(palavras):
+    return {remove_acentos(p.lower()) for p in palavras if len(p) == 5} - INVALIDAS
+
+
+def salvar_palavras(arquivo, palavras):
+    with open(arquivo, "w") as file:
+        file.write("\n".join(sorted(palavras)) + "\n")
+
+
+pt_br_letras_5 = filtrar_palavras(obter_palavras(DICT_URL))
+pt_br_letras_5_1 = filtrar_palavras(obter_palavras(DICT_URL_1))
+
+completo_pt = pt_br_letras_5.union(pt_br_letras_5_1)
+salvar_palavras("portugues_completo.txt", completo_pt)

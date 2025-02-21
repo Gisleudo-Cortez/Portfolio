@@ -73,7 +73,7 @@ def filtrar_palavras(palavras, feedbacks):
 
 def main():
 
-    palavras = carregar_palavras("portugues_5_letras_gh.txt")
+    palavras = carregar_palavras("portugues_completo.txt")
     
     letra_dict, total_letras = calcular_distribuicao_letras(palavras)
     prob_letras = calcular_probabilidades(letra_dict, total_letras)
@@ -131,7 +131,7 @@ def main():
             print(f"\nPossível resposta: {palavras[0].upper()}")
             acerto = input("Você acertou a palavra? (S/N) ").strip().upper()
             if acerto == "S":
-                print("Parabéns! Encerrando.")
+                print("Concluido Encerrando.")
                 return
             else:
                 continue
