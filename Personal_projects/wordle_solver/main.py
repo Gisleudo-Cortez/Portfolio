@@ -97,6 +97,7 @@ def main():
             chute_sugerido = max(ent_atual, key=ent_atual.get)
         
         print(f"Sugestão do sistema: {chute_sugerido.upper()}\nentropia: {ent_dict[chute_sugerido]:.4f}")
+        print(f"Outras sugestoes: {palavras[:10]}")
         
         chute_usuario = input("Digite a palavra que você usou (ou ENTER para usar a sugestão): ").strip().lower()
         if chute_usuario == "":

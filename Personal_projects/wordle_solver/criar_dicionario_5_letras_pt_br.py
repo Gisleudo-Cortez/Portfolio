@@ -4,7 +4,7 @@ import unicodedata
 DICT_URL_1 = "https://www.ime.usp.br/~pf/dicios/br-utf8.txt"
 DICT_URL = "https://raw.githubusercontent.com/fserb/pt-br/refs/heads/master/palavras"
 
-INVALIDAS = {'aioes'}
+INVALIDAS = {'aioes','oreai','lenca','reusa','calis','talis'}
 
 
 def remove_acentos(palavra):
