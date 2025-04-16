@@ -1,5 +1,5 @@
 use crate::routes::{health_check, subscribe};
-use actix_web::{App, HttpServer, dev::Server, middleware::Logger, web, web::Data};
+use actix_web::{App, HttpServer, dev::Server, middleware::Logger, web};
 use sqlx::PgPool;
 use std::net::TcpListener;
 
