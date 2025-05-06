@@ -12,7 +12,7 @@ if ! command -v sqlx &> /dev/null; then
 fi
 
 # Set default values if not already provided.
-DB_PORT="${DB_PORT:=5432}"
+DB_PORT="${DB_PORT:=5431}"
 SUPERUSER="${SUPERUSER:=postgres}"
 SUPERUSER_PWD="${SUPERUSER_PWD:=password}"
 APP_USER="${APP_USER:=app}"
