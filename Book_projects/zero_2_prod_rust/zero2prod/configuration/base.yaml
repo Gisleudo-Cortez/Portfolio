@@ -1,4 +1,5 @@
-application_port: 7979
+application: 
+  port: 7979
 database:
   host: "localhost"
   port: 5431
