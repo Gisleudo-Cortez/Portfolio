@@ -32,6 +32,6 @@ fake = "2.9"
 quickcheck = "1.0.3"
 quickcheck_macros = "1.1.0"
 rand = "0.8"
-
-[dev-dependencies]
 reqwest = "0.12"
+[dev-dependencies]
+
