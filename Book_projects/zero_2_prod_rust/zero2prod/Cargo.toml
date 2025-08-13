@@ -33,5 +33,7 @@ quickcheck = "1.0.3"
 quickcheck_macros = "1.1.0"
 rand = "0.8"
 reqwest = "0.12"
-[dev-dependencies]
 
+[dev-dependencies]
+tokio = { version = "1", features = ["rt", "macros"] }
+wiremock = "0.6"
